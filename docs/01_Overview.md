@@ -2,14 +2,26 @@
 ## **1) Giới thiệu** <img src=https://i.imgur.com/obaHj2d.png width=25% align=right>
 - Trang chủ : https://www.python.org/
 - Phiên bản ổn định : `3.7.4`
-- **Python** là một ngôn ngữ lập trình bậc cao ( ***high-level programming language*** ) cho các mục đích lập trình đa năng, do Guido van Rossum tạo ra và lần đầu ra mắt vào năm `1991` .
+- **Python** là một ngôn ngữ lập trình bậc cao ( ***high-level programming language*** ) cho các mục đích lập trình đa năng , do **`Guido van Rossum`** tạo ra và lần đầu ra mắt vào năm `1991` .
 - **Python** được thiết kế với ưu điểm mạnh là dễ đọc, dễ học và dễ nhớ.
 - **Python** là ngôn ngữ có hình thức rất sáng sủa, cấu trúc rõ ràng, thuận tiện cho người mới học lập trình. 
 - Cấu trúc của **Python** còn cho phép người sử dụng viết mã lệnh với số lần gõ phím tối thiểu
 - **Python** được phát triển trong một dự án mã mở, do tổ chức phi lợi nhuận **Python Software Foundation** quản lý.
-- Ban đầu, **Python** được phát triển để chạy trên nền Unix. Nhưng rồi theo thời gian, **Python** dần mở rộng sang mọi hệ điều hành từ MS-DOS đến Mac OS, OS/2, Windows, Linux và các hệ điều hành khác thuộc họ Unix. Mặc dù sự phát triển của **Python** có sự đóng góp của rất nhiều cá nhân, nhưng Guido van Rossum hiện nay vẫn là tác giả chủ yếu của **Python** . Ông giữ vai trò chủ chốt trong việc quyết định hướng phát triển của **Python** .
+- Ban đầu, **Python** được phát triển để chạy trên nền Unix. Nhưng rồi theo thời gian, **Python** dần mở rộng sang mọi hệ điều hành từ MS-DOS đến Mac OS, OS/2, Windows, Linux và các hệ điều hành khác thuộc họ Unix. Mặc dù sự phát triển của **Python** có sự đóng góp của rất nhiều cá nhân, nhưng **`Guido van Rossum`** hiện nay vẫn là tác giả chủ yếu của **Python** . Ông giữ vai trò chủ chốt trong việc quyết định hướng phát triển của **Python** .
 - Vào tháng 7 năm 2018, **`Van Rossum`** đã từ chức Leader trong cộng đồng ngôn ngữ **Python** sau 30 năm lãnh đạo.
-## **2) Lịch sử phát triển các phiên bản**
+- **Python** giờ đây đã trở thành 1 trong các ngôn ngữ lập trình phổ biến nhất thế giới .
+## **2) Những điều Python có thể làm được**
+- Lập trình Web : Youtube , Google , Dropbox , Quora , Reddit , Instagram , Nasa , Firefox ,....
+- Data Analysis
+    - Machine Learning
+    - Data Visualization
+    - Google Cloud Platform
+    - Image and Video Analysis
+- Lập trình Robot
+- Lập trình game
+- Lập trình ứng dụng
+- Bảo mật mạng máy tính
+## **3) Lịch sử phát triển các phiên bản**
 ### **2.1) Python 1**
 - Bao gồm các bản phát hành `1.x`
 - Kéo dài từ đầu đến cuối thập niên `1990`
