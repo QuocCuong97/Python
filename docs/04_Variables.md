@@ -361,7 +361,7 @@
 
 
 
-#### **2.1.5) Kiểm tra kiểu dữ liệu của biến**
+### **2.6) Kiểm tra kiểu dữ liệu của biến**
 - Không như đa số các ngôn ngữ lập trình khác, khi khai báo biến phải đi kèm với kiểu dữ liệu. Trong **Python** việc khai báo kiểu dữ liệu cho biến không cần thiết mà **Python** sẽ tự biết kiểu dữ liệu của giá trị gán cho biến .
 - Để kiểm tra kiểu dữ liệu giá trị của 1 biến đã khởi tạo , ta sử dụng hàm `type()` . Cú pháp :
     ```py
