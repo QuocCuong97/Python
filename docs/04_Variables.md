@@ -345,6 +345,32 @@
     'z'
     ```
 #### **2.2.8) Cắt chuỗi**
+- Dựa trên **Indexing** , **Python** cho phép cắt chuỗi .
+- Cú pháp ( cắt từ **trái sang phải** ) :
+    ```py
+    <chuỗi>[vị_trí_bắt_đầu:vị_trí_dừng]
+    ```
+    => Khi sử dụng cú pháp này , ta sẽ nhận được 1 chuỗi . Chuỗi này chính là bản sao của chuỗi mà ta muốn cắt . Ta sẽ cắt lấy từng ký tự có vị trí từ `<vị_trí_bắt_đầu>` đến `<vị_trí_dừng> -1` và từ trái sang phải .
+    - **VD :** Có chuỗi `'abc xyz'` :
+        ```py
+        >>> s = 'abc xyz'
+        >>> s[1:5]            # cắt từng ký tự có vị trí từ 1 đến 4
+        'bc x'
+        >>> s[0:3]            # cắt từng ký tự có vị trí từ 0 đến 3
+        'abc '
+        >>> s[-4:-1]          # cắt từng kí tự có vị trí từ -4 đến -2
+        ' xy'
+        >>> s[1:None]         # lấy các ký tự có vị trí 1 đến hết chuỗi
+        'bc xyz'
+        >>> s[1:]             # chỉ cần bỏ trống, Python sẽ tự hiểu là None
+        'bc xyz'
+        >>> s[:]              # sao chép chuỗi
+        'abc xyz'
+        ```
+- Cú pháp ( cắt từ **phải sang trái** ) :
+    ```py
+    <chuỗi>[vị_trí_bắt_đầu:vị_trí_dừng:bước]
+    ```
 #### **2.2.9) Ép kiểu dữ liệu**
 #### **2.2.10) Thay đổi nội dung chuỗi**
 
