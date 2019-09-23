@@ -338,6 +338,16 @@
     ```
 ### **12.3) Các phương thức xử lý**
 #### **12.3.1) Phương thức `encode`**
+- Cú pháp :
+    ```py
+    <chuỗi>.encode(encoding='utf-8', errors='strict')
+    ```
+- Công dụng : đây là phương thức dùng để `encode` một chuỗi với phương thức mã hóa mặc định là `utf-8` . Còn về `errors` mặc định sẽ là `strict` có nghĩa là sẽ có thông báo lỗi hiện lên nếu có vấn đề xuất hiện trong quá trình `encode` chuỗi .
+- **VD :**
+    ```py
+    >>> 'uể oải'.encode()
+    b'u\xe1\xbb\x83 o\xe1\xba\xa3i'
+    ```
 #### **12.3.2) Phương thức `join`**
 - Cú pháp :
     ```py
@@ -499,5 +509,125 @@
     >>> 'hello world!'.endswith('!')
     True
     >>> 'hello world!'.endswith('ho')
+    False
+    ```
+#### **12.5.4) Phương thức `find`**
+- Cú pháp : 
+    ```py
+    <chuỗi>.find(sub, [start, [end]])
+    ```
+- Công dụng : trả về 1 số nguyên , là vị trí đầu tiên của `sub` khi dò từ trái sang phải trong chuỗi . Nếu `sub` không có trong chuỗi , kết quả sẽ là `-1` . Vẫn như các phương thức khác , `start` và `end` đại diện cho slicing và sẽ tìm trong chuỗi slicing này .
+- **VD :**
+    ```py
+    >>> 'hello world!'.find('h')
+    0
+    >>> 'hello world!'.find('!')
+    11
+    >>> 'hello world!'.find('k')
+    -1
+    >>> 'hello world!'.find('h', 2)
+    -1
+    ```
+#### **12.5.5) Phương thức `rfind`**
+- Cú pháp :
+    ```py
+    <chuỗi>.rfind(sub, [start, [end]])
+    ```
+- Công dụng : tương tự như phương thức `find` nhưng sẽ dò từ phải sang trái .
+- **VD :**
+    ```py
+    >>> 'hello world!'.rfind('l')
+    9
+    ```
+#### **12.5.6) Phương thức `index`**
+- Cú pháp :
+    ```py
+    <chuỗi>.index(sub, [start, [end]])
+    ```
+- Công dụng : tương tự phương thức `find` nhưng khác biệt là sẽ có lỗi `ValueError` nếu không tìm thấy chuỗi `sub` trong chuỗi ban đầu .
+- **VD :**
+    ```py
+    >>> 'hello world!'.find('a')
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    ValueError: substring not found
+    ```
+#### **12.5.7) Phương thức `rindex`**
+- Cú pháp :
+    ```py
+    <chuỗi>.rindex(sub, [start, [end]])
+    ```
+- Công dụng : tương tự như phương thức `index` nhưng khác là sẽ tìm từ phải sang trái của chuỗi .
+- **VD :**
+    ```py
+    >>> 'hello world!'.find('a')
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    ValueError: substring not found
+    ```
+### **12.6) Các phương thức xác thực**
+#### **12.6.1) Phương thức `islower`**
+- Cú pháp :
+    ```
+    <chuỗi>.islower()
+    ```
+- Công dụng : trả về `True` nếu tất cả các ký tự trong chuỗi đều là viết thường . Ngược lại sẽ là `False` .
+- **VD :**
+    ```py
+    >>> 'python'.islower()
+    True
+    >>> 'Python'.islower()
+    False
+    ```
+#### **12.6.2) Phương thức `isupper`**
+- Cú pháp :
+    ```py
+    <chuỗi>.isupper()
+    ```
+- Công dụng : trả về `True` nếu tất cả các ký tự trong chuỗi đều là viết hoa . Ngược lại là `False` .
+- **VD :**
+    ```py
+    >>> 'Python'.isupper()
+    False
+    >>> 'PYTHON'.isupper()
+    True
+    ```
+#### **12.6.3) Phương thức `istitle`**
+- Cú pháp :
+    ```py
+    <chuỗi>.istitle()
+    ```
+- Công dụng : trả về `True` nếu chuỗi đó là 1 dạng `title` ( có các từ được viết hoa chữ cái đầu ) . Ngược lại sẽ là `False` .
+- **VD :**
+    ```py
+    >>> 'Hello World!'.istitle()
+    True
+    >>> 'hello World!'.istitle()
+    False
+    ```
+#### **12.6.4) Phương thức `isdigit`**
+- Cú pháp :
+    ```py
+    <chuỗi>.isdigit()
+    ```
+- Công dụng : trả về `True` nếu tất cả các ký tự trong chuỗi đều là những con số từ `0 -> 9`
+- **VD :**
+    ```py
+    >>> '0124'.isdigit()
+    True
+    >>> '-124'.isdigit()
+    False
+    ```
+#### **12.6.5) Phương thức `isspace`**
+- Cú pháp :
+    ```py
+    <chuỗi>.isspace()
+    ```
+- Công dụng : trả về `True` nếu tất cả các ký tự trong chuỗi đều là ký tự khoảng trắng ( `space` )
+- **VD :**
+    ```py
+    >>> '   '.isspace()
+    True
+    >>> 'a   a'.isspace()
     False
     ```
