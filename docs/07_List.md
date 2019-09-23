@@ -84,7 +84,7 @@
     ['a', 'b', 'c', 'a', 'b', 'c']
     >>> [1, 2] * 3
     [1, 2, 1, 2, 1, 2]
-- **Toán tử `in` :
+- **Toán tử `in`** :
     ```py
     >>> 'a' in [1, 2, 3]
     False
@@ -122,3 +122,37 @@
     [1, 2, 3]
     ```
 ## **6) Ma trận**
+- Ma trận List chỉ đơn giản là một list chứa các list bên trong .
+    ```py
+    >>> lst = [[1,2,3], [4,5,6]]
+    >>> lst
+    [[1,2,3], [4,5,6]]
+    ```
+- Truy cập các phần tử của list vừa khởi tạo :
+    ```py
+    >>> lst[0]          # List con
+    [1,2,3]
+    >>> lst[-1]         # List con
+    [4,5,6]
+    ```
+- Truy cập đến các phần tử con của các list con :
+    ```py
+    >>> lst[0][0]
+    1
+    >>> lst[0][-1]
+    3
+    >>> lst[-1][-1]
+    6
+    ```
+>### ***Chú ý :** Không được phép gán list này qua list kia nếu không có chủ đích*
+## **7) Hàm trong list**
+### **7.1) Các hàm tiện ích**
+#### **7.1.1) Hàm `count`**
+- Công dụng : để đếm số lần 1 phần tử xuất hiện trong chuỗi
+- Cú pháp :
+    ```py
+    <list>.count(sub, [start, [end]])
+    ```
+    - Trong đó :
+        - `sub` : là phần tử của chuỗi . Kết quả của lệnh sẽ là 1 số nguyên , chính là số lần xuất hiện của `sub` trong list
+        - `start` và `end` 

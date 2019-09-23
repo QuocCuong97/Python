@@ -237,3 +237,267 @@
     <tên_chuỗi> % (value_1,value_2,value_3,...)
     ```
 - **VD :** 
+## **12) Các phương thức chuỗi**
+### **12.1) Các phương thức biến đổi**
+#### **12.1.1) Phương thức `capitalize`**
+- Cú pháp :
+    ```py
+    <chuỗi>.capitalize()
+    ```
+- Công dụng : trả về 1 chuỗi với ký tự đầu tiên được viết hoa và viết thường tất cả các ký tự còn lại
+- **VD :**
+    ```py
+    >>> 'hello World!'.capitalize()
+    'Hello world!'
+    ```
+#### **12.1.2) Phương thức `upper`**
+- Cú pháp : 
+    ```py
+    <chuỗi>.upper()
+    ```
+- Công dụng : trả về 1 chuỗi với tất cả các ký tự được chuyển thành các ký tự viết hoa .
+- **VD :**
+    ```py
+    >>> 'hello World!'.upper()
+    'HELLO WORLD!'
+    ```
+#### **12.1.3) Phương thức `lower`**
+- Cú pháp :
+    ```py
+    <chuỗi>.lower()
+    ```
+- Công dụng : trả về 1 chuỗi với tất cả các ký tự được chuyển thành các ký tự viết thường .
+- **VD :**
+    ```py
+    >>> 'hello World!'.lower()
+    'hello world!'
+    ```
+#### **12.1.4) Phương thức `swapcase`**
+- Cú pháp :
+    ```py
+    <chuỗi>.swapcase()
+    ```
+- Công dụng : trả về 1 chuỗi với các ký tự viết hoa được chuyển thành viết thường , viết thường được chuyển thành viết hoa .
+- **VD :**
+    ```
+    >>> 'hello World!'.swapcase()
+    'HELLO wORLD!'
+    ```
+#### **12.1.5) Phương thức `title`**
+- Cú pháp : 
+    ```py
+    <chuỗi>.title()
+    ```
+- Công dụng : trả về 1 chuỗi với định dạng tiêu đề , có nghĩa là các từ sẽ được viết hoa chữ cái đầu tiên , còn lại là viết thường .
+- **VD :**
+    ```py
+    >>> 'hello World!'.title()
+    'Hello World!'
+    ```
+### **12.2) Các phương thức định dạng**
+#### **12.2.1) Phương thức `center`**
+- Cú pháp :
+    ```py
+    <chuỗi>.center(width, [fillchar])
+    ```
+- Công dụng : trả về 1 chuỗi được căn giữa với chiều rộng `width`
+    - Nếu `fillchar` là `None` ( không được nhập vào ) thì sẽ dùng ký tự khoảng trắng ( `space` ) để căn , không thì sẽ căn bằng ký tự `fillchar` .
+    - Ký tự `fillchar` là 1 chuỗi có độ dài bằng `1` .
+- **VD :**
+    ```py
+    >>> 'abc'.center(12)
+    '    abc     '
+    >>> 'abc'.center(12, '*')
+    '****abc*****'
+    ```
+#### **12.2.2) Phương thức `rjust`**
+- Cú pháp :
+    ```py
+    <chuỗi>.rjust(width, [fillchar])
+    ```
+- Công dụng : tương tự như `center` , tuy nhiên sẽ chỉ căn lề bên phải .
+- **VD :**
+    ```py
+    >>> 'abc'.rjust(12)
+    '         abc'
+    >>> 'abc'.rjust(12, '*')
+    '*********abc'
+    ```
+#### **12.2.3) Phương thức `ljust`**
+- Cú pháp :
+    ```py
+    <chuỗi>.ljust(width, [fillchar])
+    ```
+- Công dụng : ngược lại với `rjust` , đây là căn lề trái .
+- **VD :**
+    ```py
+    >>> 'abc'.ljust(12)
+    'abc         '
+    >>> 'abc'.ljust(12, '*')
+    'abc*********'
+    ```
+### **12.3) Các phương thức xử lý**
+#### **12.3.1) Phương thức `encode`**
+#### **12.3.2) Phương thức `join`**
+- Cú pháp :
+    ```py
+    <ký_tự_nối>.join(<iterable>)
+    ```
+- Công dụng : trả về một chuỗi bằng cách nối các phần tử trong `iterable` bằng `ký_tự_nối` . Một `iterable` có thể là một `tuple` , `list` ,... hoặc là một `iterator` .
+#### **12.3.3) Phương thức `replace`**
+- Cú pháp :
+    ```py
+    <chuỗi>.replace(old, new, [count])
+    ```
+- Công dụng : trả về một chuỗi với các chuỗi `old` nằm trong chuỗi ban đầu được thay thế bằng chuỗi `new` . Nếu `count` khác `None` ( có nghĩa là ta cho thêm `count` ) thì ta sẽ thay thế `old` bằng `new` với số lượng `count` từ trái qua phải . Nếu chuỗi `old` không nằm trong chuỗi ban đầu hoặc `count` = `0` thì sẽ trả về 1 chuỗi giống y với chuỗi ban đầu .
+- **VD :**
+    ```py
+    >>> 'hello world!'.replace('hello', 'hi')
+    'hi world!'
+    >>> 'hello world!'.replace('word', 'A')
+    'hello world!'
+    >>> 'hello world!'.replace('world', 'A'. 0)
+    'hello world!
+    >>> 'hello hello world!'.replace('hello', 'hi', 1)
+    'hi hello world!'
+    ```
+#### **12.3.4) Phương thức `strip`**
+- Cú pháp :
+    ```py
+    <chuỗi>.strip([chars])
+    ```
+- Công dụng : trả về một chuỗi với phần đầu và phần đuôi của chuỗi được bỏ đi các ký tự `chars` . Nếu `chars` bị bỏ trống thì mặc định các ký tự bỏ đi là dấu `space` và các **escape sequence** .
+- **VD :**
+    ```py
+    >>> '    abc     '.strip()
+    'abc'
+    >>> '%%%%%Hello%%%'.strip('%')
+    'Hello'
+    >>> 'cababHellobaaaca'.strip('abc')
+    'Hello'
+    ```
+#### **12.3.5) Phương thức `rstrip`**
+- Cú pháp :
+    ```py
+    <chuỗi>.rstrip()
+    ```
+- Công dụng : cách hoạt động hoàn toàn như phương thức `strip` , nhưng khác là chỉ bỏ đi phần đuôi ( từ phải sang trái )
+- **VD :**
+    ```py
+    >>> '    abc     '.rstrip()
+    '    abc'
+    ```
+#### **12.3.6) Phương thức `lstrip`**
+- Cú pháp :
+    ```py
+    <chuỗi>.lstrip()
+    ```
+- Công dụng : ngược lại với `rstrip` , `lstrip` bỏ đi phần đầu của chuỗi .
+- **VD :**
+    ```py
+    >>> '    abc     '.lstrip()
+    'abc     '
+    ```
+### **12.4) Các phương thức tách chuỗi**
+#### **12.4.1) Phương thức `split`**
+- Cú pháp :
+    ```py
+    <chuỗi>.split(sep=None, maxsplit=-1)
+    ```
+- Công dụng : trả về 1 `list` bằng cách chia các phần tử bằng lý tự `sep` :
+    - Nếu `sep` mặc định bằng `None` thì sẽ dùng ký tự khoảng trắng ( `space` )
+    - Nếu `maxsplit` được mặc định bằng `-1` , **Python** sẽ không giới hạn việc tách , còn không , **Python** sẽ tách với số lần được cung cấp thông qua `maxsplit` .
+- **VD :**
+    ```py
+    >>> 'around the world'.split()
+    ['around', 'the', 'world']
+    >>> 'around the world'.split(maxsplit=1)
+    ['around', 'the world']
+    >>> 'around-the-world'.split('-')
+    ['around', 'the', 'world']
+    ```
+#### **12.4.2) Phương thức `rsplit`**
+- Cú pháp :
+    ```py
+    <chuỗi>.rpslit(sep=None, maxsplit=-1)
+    ```
+- Công dụng : tương tự như `split()` , khác là tách từ bên phải sang trái .
+- **VD :**  
+    ```py
+    >>> 'around the world'.rsplit()
+    ['around', 'the', 'world']
+    >>> 'around the world'.rsplit(maxsplit=1)
+    ['around the', 'world']
+    ```
+#### **12.4.3) Phương thức `partition`**
+- Cú pháp :
+    ```py
+    <chuỗi>.partition(sep)
+    ```
+- Công dụng : trả về một `tuple` với 3 phần tử . Các phần tử đó lần lược là `chuỗi_trước_sep` , `sep` , và `chuỗi_sau_sep` . Trong trường hợp không tìm thấy `sep` trong chuỗi , mặc định trả về giá trị đầu tiên là chuỗi ban đầu và 2 giá trị kế tiếp là chuỗi rỗng .
+- **VD :**
+    ```py
+    >>> 'A with B with C'.partition('with')
+    ('A', 'with', 'B with C')
+    >>> 'A with B with C'.partition('and')
+    ('A with B with C', '', '')
+    ```
+#### **12.4.4) Phương thức `rpartition`**
+- Cú pháp :
+    ```py
+    <chuỗi>.rpartition(sep)
+    ```
+- Công dụng : cách phân chia giống như phương thức `partition` nhưng lại chia từ phải qua trái . Với `sep` không có trong chuỗi thì sẽ trả về 2 giá trị đầu tiên là chuỗi rỗng và cuối cùng là chuỗi ban đầu .
+- **VD :**
+    ```py
+    >>> 'A with B with C'.rpartition('with')
+    ('A with B', 'with', 'C')
+    >>> 'A with B with C'.rpartition('and')
+    ('', '', 'A with B with C')
+    ```
+### **12.5) Các phương thức tiện ích**
+#### **12.5.1) Phương thức `count`**
+- Cú pháp :
+    ```py
+    <chuỗi>.count(sub, [start, [end]])
+    ```
+- Công dụng : trả về một số nguyên, chính là số lần xuất hiện của `sub` trong chuỗi . Còn `start` và `end` là số kĩ thuật slicing ( không có bước )
+- **VD :**
+    ```py
+    >>> 'hello hello hello'.count('hello')
+    3
+    >>> 'hello hello hello'.count('hello hello')
+    1
+    >>> 'hello hello hello hello'.count('hello', 2)
+    2
+    >>> 'hello hello hello hello'.count('hello', 2, 3)
+    1
+    ```
+#### **12.5.2) Phương thức `startswith`**
+- Cú pháp :
+    ```py
+    <chuỗi>.startswith(prefix, [start, [end]])
+    ```
+- Công dụng : trả về giá trị `True` nếu chuỗi đó bắt đầu bằng `prefix` . Ngược lại là `False` . Hai yếu tố `start` , `end` tượng trưng cho việc slicing ( không có bước ) để kiểm tra với chuỗi slicing đó .
+- **VD :**
+    ```py
+    >>> 'hello world!'.startswith('he')
+    True
+    >>> 'hello world!'.startswith('hi')
+    False
+    >>> 'fly around the world'.startswith('fly', 4)
+    False
+    ```
+#### **12.5.3) Phương thức `endswith`**
+- Cú pháp :
+    ```py
+    <chuỗi>.endswith(prefix, [start, [end]])
+    ```
+- Công dụng : trả về giá trị `True` nếu chuỗi đó kết thúc bằng chuỗi `prefix` . Ngược lại là `False` . Hai yếu tố `start` và `end` tượng trưng cho việc slicing ( không có bước ) để kiểm tra với chuỗi slicing đó .
+- **VD :**
+    ```py
+    >>> 'hello world!'.endswith('!')
+    True
+    >>> 'hello world!'.endswith('ho')
+    False
+    ```
