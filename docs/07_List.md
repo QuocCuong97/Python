@@ -145,14 +145,181 @@
     6
     ```
 >### ***Chú ý :** Không được phép gán list này qua list kia nếu không có chủ đích*
-## **7) Hàm trong list**
-### **7.1) Các hàm tiện ích**
-#### **7.1.1) Hàm `count`**
-- Công dụng : để đếm số lần 1 phần tử xuất hiện trong chuỗi
+## **7) Các phương thức trong list**
+### **7.1) Các phương thức tiện ích**
+#### **7.1.1) Phương thức `count`**
 - Cú pháp :
     ```py
     <list>.count(sub, [start, [end]])
     ```
     - Trong đó :
         - `sub` : là phần tử của chuỗi . Kết quả của lệnh sẽ là 1 số nguyên , chính là số lần xuất hiện của `sub` trong list
-        - `start` và `end` 
+        - `start` và `end` là kỹ thuật slicing ( không có bước)
+- Công dụng : trả về một số nguyên, chính là số lần xuất hiện của `sub` trong list .
+- **VD :**
+    ```py
+    >>> lst = [1, 3, 5, 7, 9, 1]
+    >>> lst.count(1)
+    2
+    >>> lst.count(4)
+    0
+    ```
+#### **7.1.2) Phương thức `index`**
+- Cú pháp :
+    ```py
+    <list>.index(sub, [start, [end]])
+    ```
+- Công dụng : trả về 1 số nguyên , là vị trí đầu tiên của `sub` khi dò từ trái sang phải trong list . Sẽ có lỗi `ValueError` nếu không tìm thấy phần tử `sub` trong chuỗi ban đầu .
+- **VD :**
+    ```py
+    >>> lst = [1, 2, 3]
+    >>> ls.index(2)
+    1
+    >>> ls.index(4)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    ValueError: 4 is not in list
+    ```
+#### **7.1.3) Phương thức `copy`**
+- Cú pháp :
+    ```py
+    <list>.copy()
+    ```
+- Công dụng : trả về một List tương tự list ban đầu , giống với `list[:]`
+- **VD :**
+    ```py
+    >>> lst_1 = [1, 2, 3]
+    >>> lst_2 = lst_1.copy()
+    >>> lst_3 = lst_1[:]
+    >>> lst_2
+    [1, 2, 3]
+    >>> lst_3
+    [1, 2, 3]
+    ```
+#### **7.1.4) Phương thức `clear`**
+- Cú pháp :
+    ```py
+    <list>.clear()
+    ```
+- Công dụng : xóa mọi phần tử có trong list
+> Lưu ý : **Python `< 3.2`** sẽ không có phương thức này .
+- **VD :**
+    ```py
+    >>> lst = [1, 2, 3]
+    >>> lst.clear()
+    >>> lst
+    []
+    ```
+### **7.2) Các phương thức cập nhật**
+#### **7.2.1) Phương thức `append`**
+- Cú pháp :
+    ```py
+    <list>.append(x)
+    ```
+- Công dụng : thêm phần tử `x` vào cuối `list` .
+- **VD :**
+    ```py
+    >>> lst = [1, 2, 3]
+    >>> lst.append(4)
+    >>> lst
+    [1, 2, 3, 4]
+    >>> lst.append([5, 6])
+    >>> lst
+    [1, 2, 3, 4, [5, 6]]
+    ```
+#### **7.2.2) Phương thức `extend`**
+- Cú pháp : 
+    ```py
+    <list>.extend(iterable)
+    ```
+- Công dụng : thêm từng phần tử một của `iterable` vào cuối `list` .
+- **VD :**
+    ```py
+    >>> lst = [1, 2, 3, 4]
+    >>> lst.extend([5, 6])
+    >>> lst
+    [1, 2, 3, 4, 5, 6]
+    >>> lst.extend([7, 8], 9)
+    [1, 2, 3, 4, 5, 6, [7, 8], 9]
+    ```
+#### **7.2.3) Phương thức `insert`**
+- Cú pháp :
+    ```py
+    <list>.insert(i, x)
+    ```
+- Công dụng : thêm phần `x` vào vị trí `i` trong `list`
+- **VD :**
+    ```py
+    >>> lst = [1, 2, 3]
+    >>> lst.insert(1, 8)
+    >>> lst
+    [1, 8, 2, 3]
+    ```
+#### **7.2.4) Phương thức `pop`**
+- Cú pháp :
+    ```py
+    <list>.pop([i])
+    ```
+- Công dụng : bỏ đi phần tử thứ `i` trong `list` và trả về giá trị đó . Nếu vị trí `i` không được cung cấp , phương thức này sẽ tự bỏ đi phần tử cuối cùng của `list` và trả về giá trị đó .
+- **VD :**
+    ```py
+    >>> lst = [1, 2, 3, 4, 5, 6]
+    >>> lst.pop(3)
+    4
+    >>> lst
+    [1, 2, 3, 5, 6]
+    >>> lst.pop()                # Mặc định bỏ đi phần tử cuối cùng của List
+    6
+    >>> lst
+    [1, 2, 3, 5]
+    ```
+#### **7.2.5) Phương thức `remove`**
+- Cú pháp : 
+    ```py
+    <list>.remove(x)
+    ```
+- Công dụng : bỏ đi phần tử đầu tiên trong `list` có giá trị `x` . Nếu trong `list` không có giá trị `x` sẽ có lỗi được thông báo .
+- **VD :**
+    ```py
+    >>> lst = [1, 5, 6, 2, 1, 7]
+    >>> lst.remove(1)
+    >>> lst
+    [5, 6, 2, 1, 7]
+    >>> lst.remove(3)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    ValueError: list.remove(x): x not in list
+    ```
+### **7.3) Các phương thức xử lý**
+#### **7.3.1) Phương thức `reverse`**
+- Cú pháp :
+    ```py
+    <list>.reverse()
+    ```
+- Công dụng : đảo ngược các phần tử trong list
+- **VD :**
+    ```py
+    >>> lst = [1, 2, 3]
+    >>> lst.reverse()
+    >>> lst
+    [3, 2, 1]
+    ```
+#### **7.3.2) Phương thức `sort`**
+- Cú pháp :
+    ```py
+    <list>.sort(key=None, reverse=False)
+    ```
+- Công dụng : sắp xếp các phần tử từ bé đến lớn bằng cách so sánh trực tiếp . Mặc định ( `reverse = False` ) , phương thức sẽ sắp xếp list từ nhỏ đến lớn . Nếu `reverse = True` , phương thức sẽ sắp xếp từ lớn đến nhỏ .
+- **VD :**
+    ```py
+    >>> lst_1 = [3, 6, 7, 1, 2, 4]
+    >>> lst_1.sort()
+    >>> lst_1
+    [1, 2, 3, 4, 6, 7]
+    >>> lst_2 = [6, 8, 2, 5, 1, 10, 4]
+    >>> lst_2.sort(reverse=True)
+    >>> lst_2
+    [10, 8, 6, 5, 4, 2, 1]
+    ```
+
+
