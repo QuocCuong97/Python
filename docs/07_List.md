@@ -51,7 +51,7 @@
 ### **2.3) Sử dụng constructor list**
 - Cú pháp :
     ```py
-    list (iterable)
+    list(iterable)
     ```
 - **VD :**
     ```py
@@ -169,7 +169,7 @@
     ```py
     <list>.index(sub, [start, [end]])
     ```
-- Công dụng : trả về 1 số nguyên , là vị trí đầu tiên của `sub` khi dò từ trái sang phải trong list . Sẽ có lỗi `ValueError` nếu không tìm thấy phần tử `sub` trong chuỗi ban đầu .
+- Công dụng : trả về 1 số nguyên , là vị trí đầu tiên của `sub` khi dò từ trái sang phải trong list . Sẽ có lỗi `ValueError` nếu không tìm thấy phần tử `sub` trong `list` ban đầu .
 - **VD :**
     ```py
     >>> lst = [1, 2, 3]
