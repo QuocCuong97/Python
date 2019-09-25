@@ -114,3 +114,61 @@
 ## **5) Ghi file trong Python**
 ### **Hàm `write`**
 - Cú pháp :
+    ```py
+    <file>.write(text)       # text là nội dung muốn ghi vào file
+    ```
+- Công dụng : trả về số ký tự mà ta ghi vào . Con trỏ file sẽ được đặt ngay sau ký tự cuối cùng được ghi .
+- **VD1 :**
+    ```py
+    >>> file_op = open('/tmp/handling.txt', 'w')  # Thêm mode writable
+    >>> file_op.write('Add a new line\n')
+    15                                            # Số ký tự của chuỗi thêm vào
+    ```
+- Tuy nhiên sau khi sử dụng mode `w` , toàn bộ nội dung cũ của file sẽ bị mất đi , thay vào đó là nội dung mới . Vì vậy nếu muốn thêm nội dung nên dùng mode `a` ( hoặc `a+` ) .
+- **VD2 :**
+    ```py
+    >>> file_op = open('/tmp/handling.txt', 'a+')
+    >>> file_op.write('Add another new line\n')
+    21
+    >>> file_op.close()               # đóng file để đưa con trỏ chuột về đầu file
+    >>> file_op = open('/tmp/handling.txt')
+    >>> data = file_op.read()
+    'Add a new line\nAdd another new line\n'
+    ```
+## **6) Kiểm soát con trỏ file**
+### **Hàm `seek`**
+- Cú pháp :
+    ```py
+    <file>.seek(offset, whence=0)
+    ```
+    > Trong **Python `3.X`** , một text file sẽ chỉ được sử dụng `whence = 0` . `whence = 1` hoặc `whence = 2` chỉ sử dụng với binary file .
+- Công dụng : giúp ta di chuyển con trỏ từ vị trí đầu file qua `offset` kí tự ( `offset` phải là một số tự nhiên ) .<br>
+    => Nhờ hàm này , có thể ghi nội dung từ bất cứ đâu trong file đồng thời có thể đọc lại file sau khi đưa con trỏ file xuống cuối file .
+- **VD :**
+    ```py
+    >>> data = file_op.read()
+    >>> data                            # con trỏ đang ở cuối file nên không thể đọc nữa
+    ''
+    >>> file_op.seek(0)                 # đưa con trỏ về đầu file (offset 0)
+    0
+    >>> data = file_op.read()
+    >>> data
+    'Add a new line\nAdd another new line\nAdd another new line\n'   # file đã có thể đọc được
+    >>> 
+    ```
+## **7) Câu lệnh `with`**
+- Cấu trúc :
+    ```py
+    with expression [as variable]
+        with-block
+    ```
+    > `with-block` nằm thụt so với `with expression` là `4-space` ( `space` chứ không phải `tab` - Theo chuẩn [`PEP8`](https://www.python.org/dev/peps/pep-0008/) )
+- Đặc điểm của câu lệnh `with` : khi kết thúc `with-block` , file sẽ được đóng
+    ```py
+    >>> with open('/tmp/handling.txt') as file_op:
+    ...     data_1 = file_op.read()
+    ...     # Gõ Ctrl + D để kết thúc
+    >>> data_1
+    'Add a new line\nAdd another new line\nAdd another new line\n'
+    ```
+
