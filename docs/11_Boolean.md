@@ -36,4 +36,3 @@
 - **Python** sẽ so sánh các ký tự bằng cách đưa chúng về dưới dạng số `ASCII` bằng hàm `ord()` . [Tra bảng mã ASCII](http://www.asciitable.com/)
     - Khi so sánh bằng các toán tử `==` , `<=` , `>=` thì **Python** sẽ so sánh hết các phần tử .
     - Khi so sánh bằng các toán tử `<` , `>` , `!=` thì nhiều lúc **Python** sẽ không phải đi hết các giá trị **iterable** . Nếu như ở vị trí `i` nào đó mà nó thấy 2 giá trị không bằng nhau nó sẽ dừng lại .
-    

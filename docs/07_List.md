@@ -1,4 +1,41 @@
 # Kiểu dữ liệu List
+## **Mục lục**
+**1. Khái niệm**
+
+**2. Cách khởi tạo list**
+- **2.1. Sử dụng cặp dấu ngoặc `[]` đặt giá trị bên trong**
+- **2.2. Sử dụng List Comprehension**
+- **2.3. Sử dụng constructor list**
+
+**3. Một số toán tử với list trong Python**
+- **Toán tử `+`**
+- **Toán tử `*`**
+- **Toán tử `in`**
+
+**4. Indexing và cắt List trong Python**
+
+**5. Thay đổi nội dung List**
+
+**6) Ma trận**
+
+**7) Các phương thức trong list**
+- **7.1. Các phương thức tiện ích**
+    - **7.1.1. Phương thức `count`**
+    - **7.1.2. Phương thức `index`**
+    - **7.1.3. Phương thức `copy`**
+    - **7.1.4. Phương thức `clear`**
+    - **7.1.5. Phương thức `len`**
+- **7.2) Các phương thức cập nhật**
+    - **7.2.1. Phương thức `append`**
+    - **7.2.2. Phương thức `extend`**
+    - **7.2.3. Phương thức `insert`**
+    - **7.2.4. Phương thức `pop`**
+    - **7.2.5. Phương thức `remove`**
+- **7.3) Các phương thức xử lý**
+    - **7.3.1. Phương thức `reverse`**
+    - **7.3.2. Phương thức `sort`**
+
+---------------------------------------------
 ## **1) Khái niệm**
 - **List** là một container được sử dụng rất nhiều trong các chương trình **Python** .
 - Một **list** gồm các yếu tố sau :
@@ -63,7 +100,7 @@
     ['a', 'b', 'c', 'd' , 'e', 'f']
     ```
 ## **3) Một số toán tử với list trong Python**
-- **Toán tử `+`**
+- **Toán tử `+`** :
     ```py
     >>> lst = [1, 2]
     >>> lst += ['one', 'two']
@@ -77,7 +114,7 @@
       File "<stdin>", line 1, in <module>
     TypeError: must be str, not list
     ```
-- **Toán tử `*`**
+- **Toán tử `*`** :
     ```py
     >>> lst = list('abc') * 2
     >>> lst
@@ -209,6 +246,19 @@
     >>> lst.clear()
     >>> lst
     []
+    ```
+#### **7.1.5) Phương thức `len`**
+- Cú pháp :
+    ```py
+    len(<list>)
+    ```
+- Công dụng : trả về số phần tử có trong `list`
+- **VD :**
+    ```py
+    >>> lst = [1, 2, 3, 4, 5]
+    >>> a = len(lst)
+    >>> a
+    5
     ```
 ### **7.2) Các phương thức cập nhật**
 #### **7.2.1) Phương thức `append`**
