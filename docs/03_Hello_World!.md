@@ -6,9 +6,9 @@
     <img src=https://i.imgur.com/2XW0zks.png>
 
 ### **1.2) Chạy trực tiếp bằng Terminal (CentOS/Ubuntu)**
-- Mở **Terminal** gõ lệnh `python3` để vào trình chạy **Python** :
+- Mở **Terminal** gõ lệnh `python3.7` để vào trình chạy **Python** :
 
-    <img src=https://i.imgur.com/SPGFv6f.png>
+    <img src=https://i.imgur.com/A5lXDo5.png>
 
 ### **1.3) Debug trên phần mềm Sublime Text 3**
 - Mở file script với đuôi `.py` . Gõ `Ctrl` + `B` để chạy Script và Debug
