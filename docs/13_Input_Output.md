@@ -1,5 +1,5 @@
 # Nhập/Xuất trong Python
-## **1) Hàm `print`**
+## **1) Hàm `print` - hàm xuất**
 - Hàm `print` giúp xuất các nội dung mà người dùng muốn ra shell ( `terminal` , `command prompt` , `powershell` , ...)
 - Cú pháp :
     ```py
@@ -24,9 +24,48 @@
     - `end`
     - `file`
     - `flush`
-## **2) Hàm `input`** :
+>### **Khác nhau giữa Python 3.x và Python 2.x**
+- `print` trong **Python `3.x`** là một hàm .
+    ```py
+    print ('text_string')
+    ```
+- `print` trong **Python `2.x`** chỉ là một câu lệnh .
+    ```py
+    print 'text_string'
+    ```
+- Nếu sử dụng cú pháp của **Python `3.x`** cho **Python `2.x`** thì vẫn được , tuy nhiên khi `print` 2 chuỗi trở lên , sẽ bị hiểu nhầm là 1 **tuple** :
+    ```py
+    >>> print('Hello')              # sử dụng được cấu trúc của Python3 khi dùng 
+    Hello
+    >>> print('Hello', 'Python')    
+    ('Hello', 'Python')             # kết quả bị hiểu nhầm là Tuple
+    >>> print 'Hello', 'World!'     # công thức đúng
+    Hello World!
+    ```
+## **2) Hàm `input` - hàm nhập** :
 - Cú pháp :
     ```py
     input(prompt=None)
     ```
-- Công dụng : hàm này giúp ta đọc một chuỗi từ **standard input** , sau đó trả về cho chúng ta . Và thứ mà nó đọc vào luôn là một **chuỗi** cho dù có nhập **tuple** , **list** , **dict** ,...
+- Công dụng : hàm này giúp ta đọc một chuỗi từ **standard input** , sau đó trả về cho chúng ta . Và thứ mà nó đọc vào luôn là một **chuỗi** cho dù có nhập **tuple** , **list** , **dict** ,... Việc nhập sẽ kết thúc khi gõ phím `Enter` ( đồng nghĩa gửi vào một ký tự `\n` tuy nhiên trong thực tế nó sẽ bị bỏ đi )
+- **VD1 :**
+    ```py
+    >>> input('string')
+    string
+    ```
+- **VD2 :** : Chạy file `reading_input.py`
+    ```py
+    # reading input
+    int_input = input('Nhap vao mot so nguyen: ')
+    float_input = input('Nhap vao mot so thuc: ')
+    string_input = input('Nhap vao mot chuoi: ')
+
+    # print 
+    print('***************')
+    print('So nguyen nhap vao la: ', int_input)
+    print('So thuc nhap vao la: ', float_input)
+    print('Chuoi nhap vao la: ', string_input)
+    ```
+    => Output :
+    
+    <img src=https://i.imgur.com/HeAHnGE.png>
