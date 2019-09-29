@@ -37,7 +37,7 @@
         # while-block-2
     ```
     => Khi thực hiện xong `while-block-1` , câu lệnh continue sẽ tiếp tục vòng lặp , không quan tâm những câu lệnh ở dưới continue và như vậy nó đã bỏ qua `while-block-2` .
-## **3) Vòng lặp `While-else`**
+## **3) Vòng lặp `While-else`**`*`
 - Cú pháp :
     ```py
     while expression
