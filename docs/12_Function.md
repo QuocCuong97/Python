@@ -237,7 +237,84 @@
     7 12
     ```   
 ## **6) Lệnh `yield`**
-## **7) Lệnh `lambda`**
+### **6.1) Generator**
+- **Generator** là **iterator** , một dạng của **iterable** nhưng khác ở chỗ không thể tái sử dụng .
+- **Generator** không lưu trữ tất cả các giá trị ở bộ nhớ , mà nó sinh ra lần lượt .
+- **VD :**
+    ```py
+    >>> gen = (value for value in range(3))
+    >>> for value in gen:
+    ...     print(value)
+    ...
+    0
+    1
+    2
+    ```
+    - Vì **generator** là một **iterator** , nên không thể tái sử dụng :
+    ```py
+    >>> for value in gen:
+    ...     print(value)
+    ...
+    >>> 
+    ```
+### **6.2) Lệnh `yield`**
+- Công dụng giống với lệnh `return` , khác `return` ở chỗ :
+    - `return` trả về một **object**
+    - `yield` trả về một **generator**
+- Lý do nên dùng `yield` : 
+    - **Tốc độ** : khi sử dụng **generator** , để duyệt các giá trị thì **generator** sẽ nhanh hơn khi duyệt một **iterable** lưu trữ một lúc tất cả các giá trị .
+    - **Bộ nhớ** : khi phải làm việc với những tập dữ liệu lớn , cần cân nhắc liệu có cần giữ tất cả các giá trị một lúc không hay chỉ cần sinh ra từng giá trị một để tiết kiệm bộ nhớ .
+- **VD :**
+    ```py
+    >>> def gen():
+    ...     for value in range(3):
+    ...         print('yield', value + 1, 'times')
+    ...         yield value
+    ...
+    >>> for value in gen():
+    ...     print(value)
+    ...
+    yield 1 times
+    0
+    yield 2 times
+    1
+    yield 3 times
+    2
+    ```
+### **6.3) Phương thức `send`**(`*`)
+- Cú pháp :
+    ```py
+    generator.send(value)
+    ```
+- Công dụng : là phương thức giúp gửi giá trị vào trong một **generator** .
+## **7) Lambda**
+- Ngoài từ khóa `def` , **Python** hỗ trợ một cách khác để khai báo hàm , đó chính là `lambda` .
+- `lambda` khác `def` ở chỗ thay vì `def` tạo ra một hàm với cái tên xác định thì `lambda` trả về một hàm .
+- `lambda` còn được gọi là **hàm nặc danh ( *anonymous* )** .
+- Nó được sử dụng thường xuyên để có thể tạo ra 1 hàm chỉ với 1 dòng lệnh .
+- Cú pháp :
+    ```py
+    lambda arg_1, arg_2, ...arg_n: expression
+    ```
+    - `lambda` là một `expression` , không phải một câu lệnh
+    - `lambda` là một dòng `expression` duy nhất , không phải một khối lệnh . Phần `expression` của `lambda` giống với phần khối lệnh của hàm với một lệnh `return` ở cuối hàm nhưng với `lambda` chỉ cần ghi giá trị mà không cần `return`<br>
+    => `lambda` được ưu tiên dùng cho việc tạo ra những hàm đơn giản , còn nếu phức tạp thì sẽ sử dụng đến `def`.
+- **VD1 :**
+    - Khi sử dụng `def` :
+        ```py
+        >>> def tbc(a, b, c):
+        ...     return (a + b + c)/3
+        ...
+        >>> tbc (1, 2, 3)
+        2.0
+        ```
+    - Khi sử dụng `lambda` :
+        ```py
+        >>> tbc = lambda a, b, c:(a + b + c)/3
+        >>> tbc(1, 2, 3)
+        2.0
+        ```
+- **VD2 :** 
 ## **8) Một số công cụ hỗ trợ**
 ### **8.1) Hàm `map`**
 ## **9) Đệ quy ( recursion )**

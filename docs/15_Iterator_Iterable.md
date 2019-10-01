@@ -8,6 +8,7 @@
 - **Iterator** không có khả năng tái sử dụng trừ một số **iterator** có phương thức hỗ trợ như **file object** sẽ có phương thức `seek` .
 - **Iterator** sử dụng hàm `next` để lấy từng giá trị một . Và sẽ có lỗi `StopIteration` khi sử dụng hàm `next` lên đối tượng đó trong khi nó hết giá trị đưa ra .
 - Các **iterable object** chưa phải **iterator** . Khi sử dụng hàm `iter` sẽ trả về một **iterator** . Đây cũng chính là cách các vòng lặp hoạt động .
+- Nói tóm lại **iterator** là một dạng của **iterable** nhưng khác ở chỗ không thể tái sử dụng .
 - **VD :**
     ```py
     ```
