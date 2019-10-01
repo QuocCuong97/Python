@@ -56,7 +56,6 @@
     --D15VT3--
     ```
 ## **2) Positional argument và keyword argument**
-### **2.1) Positional argument và keyword argument**
 - Khi pass argument theo **positional argument** , các **argument** sẽ được gán lần lượt cho các parameter . Riêng đối với **keyword argument** , bạn đã tự mình gán giá trị cho các parameter .
 - Hai cách gọi hàm này tương tự với nhau .
 - Không được phép để **positional argument** theo sau **keyword argument** ( có thể pass argument vừa **positional** và **keyword** cùng một lúc được , nhưng những **positional** buộc phải đứng trước **keyword** )
@@ -90,13 +89,153 @@
           File "<stdin>", line 1                   # lỗi
         SyntaxError: positional argument follows keyword argument
         ```
-### **2.2) Force positional argument và keyword argument**
-
 ## **3) Packing argument và Unpacking argument**
 ### **3.1) Unpacking argument với `*`**
-
+- Được sử dụng để truyền các biến vào hàm bằng cách unpack các container như **list** , **tuple** , **chuỗi** , **set** , **dict** ( chỉ lấy được `key` ) .
+- Sử dụng cách này là đang truyền biến dưới dạng **positional argument** .
+- **VD :** Cho hàm sau :
+    ```py
+    >>> def test(a, b, c, d)
+    ...     print(a)
+    ...     print(b)
+    ...     print(c)
+    ...     print(d)
+    ...
+    ```
+    => Mỗi lần gọi hàm phải thực hiện truyền `4` biến<br>
+    => Tạo **list** chứa các biến :
+    ```py
+    >>> lst = ['Hello', 'all', 'of', 'you']
+    ```
+    => Truyền phần tử trong **list** làm biến :
+    ```py
+    >>> test(lst[0], lst[1], lst[2], lst[3])
+    Hello
+    all
+    of
+    you
+    ```
+    => Tuy nhiên , sử dụng dấu `*` sẽ nhanh hơn :
+    ```py
+    >>> test(*lst)
+    Hello
+    all
+    of
+    you
+    ```
+### **3.2) Packing arguments với `*`**
+- Có nghĩa là nhờ một biến gói tất cả các giá trị truyền vào cho hàm bằng **positional argument** thành một **tuple** .
+- `Print()` là hàm đặc trưng sử dụng phương thức này .
+- **VD :**
+    ```py
+    >>> def test(*var)
+    ...     print(var)
+    ...     print(type(var))
+    ...
+    >>> test('Hello', 'World!')
+    ('Hello', 'World')
+    <class 'tuple'>
+    ```
 ## **4) Biến locals và globals**
+### **4.1) Cách khai báo biến trong hàm**
+- Biến khai báo ở hàm nào thì chỉ hàm đó mới biết biến đó còn thoát ra ngoài thì biến đó coi như không có .
+- Biến khai báo ở hàm cha ( ***biến globals*** ) có thể sử dụng ở hàm con nhưng biến ở hàm con ( ***biến locals*** ) không thể sử dụng ở hàm cha .
+    ```py
+    >>> a = 5                                 # Biến globals
+    >>> def test_cha():
+    ...     x = a + 5                         # Biến globals trong hàm
+    ...     def test_con():
+    ...         y = x + 5                     # Biến local trong hàm
+    ...         return(y)
+    ...     z = test_con() + 5
+    ...     return(z)
+    ...
+    >>> test_cha()
+    20
+    ```
+### **4.2) Sử dụng lệnh `global`**
+- Nếu như một biến nằm trong hàm thì người ta gọi đó là **local variable** ( biến chỉ có hiệu lực trong một hàm nhỏ ) .
+- Cú pháp :
+    ```
+    global<variable>
+    ```
+- Công dụng : cho phép biến local thành biến global .
+- **VD :**
+    ```py
+    >>> a = 5
+    >>> def test_cha():
+    ...     x = a + 5 
+    ...     def test_con():
+    ...         y = x + 5
+    ...         return(y)
+    ...     global z
+    ...     z = test_con() + 5
+    ...     return(z)
+    ...
+    >>> test_cha()
+    20
+    >>> z               # Gọi biến local trong hàm
+    20
+    ```
+### **4.3) Hàm `locals` và `globals`**
+- Hàm `locals` cho biết những **biến local** ( những biến được khai báo trong hàm ) nằm trong chương trình .
+- Hàm `globals` cho biết những **biến global** nằm trong chương trình .
+- Kết quả xuất ra của 2 hàm này là 1 **dict** , với `key` là ***tên biến*** và `value` là ***giá trị của biến*** .
+> **Chú ý :** Với hàm `globals()` thì chỉ trả về những **biến global** có giá trị .
+- **VD :**
+    ```py
+    >>> a = 5
+    >>> def test_cha():
+    ...     x = a + 5 
+    ...     def test_con():
+    ...         y = x + 5
+    ...         return(y)
+    ...     global z
+    ...     z = test_con() + 5
+    ...     return(z)
+    ...
+    >>> test_cha()
+    20
+    >>> z               # Gọi biến local trong hàm
+    20
+    >>> globals()
+    {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, 'a': 5, 'test_cha': <function test_cha at 0x0000026B2BF85288>, 'z': 20}
+    >>> locals()
+    {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, 'a': 5, 'test_cha': <function test_cha at 0x0000026B2BF85288>, 'z': 20}
+    ```
 ## **5) Lệnh `return`**
+- Đây là lệnh chỉ sử dụng ở trong hàm ( nếu sử dụng ở ngoài hàm sẽ có nhắc lỗi ) .
+- Cú pháp :
+    ```py
+    return(object)
+    ```
+    - Trong đó : `object` là một đối tượng bất kỳ của một lớp nào đó , có thể là **số** , **chuỗi** , **list** , **tuple** , **hàm** hoặc thậm chí bỏ trống -> `object` sẽ được hiểu là `None` .
+- Công dụng : khi `return` được gọi , hàm được kết thúc và kết quả được trả ra ngoài . Kết quả trả ra ngoài nên được đưa cho một biến nào đó hứng , nếu không thì coi như không gọi hàm để làm gì .
+- **VD :**
+    ```py
+    >>> a = 5
+    >>> def test():
+    ...     x = a + 5
+    ...     return(x)
+    ...
+    >>> test()
+    10
+    ```
+### **Dùng lệnh `return` để trả về nhiều giá trị cùng 1 lúc**
+- **VD :**
+    ```py
+    >>> a = 5
+    >>> def test(a, b):
+    ...     x = a + b
+    ...     y = a*b
+    ...     return(x, y)
+    ...
+    >>> so_thu_1 = 3
+    >>> so_thu_2 = 4
+    >>> tong, tich = test(so_thu_1, so_thu_2)
+    >>> print(tong, tich)
+    7 12
+    ```   
 ## **6) Lệnh `yield`**
 ## **7) Lệnh `lambda`**
 ## **8) Một số công cụ hỗ trợ**

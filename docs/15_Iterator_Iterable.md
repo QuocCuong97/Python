@@ -1,6 +1,6 @@
 # Iteration và một số hàm hỗ trợ cho Iteration Object trong Python
 ## **1) Iteration**
-- **Iteration** là một khái niệm chung cho việc lấy từng phâng tử của một đối tượng nào đó , bất cứ khi nào sử dụng vòng lặp hay kỹ thuật nào đó để có được giá trị một nhóm phần tử thì đó là **iteration** .
+- **Iteration** là một khái niệm chung cho việc lấy từng phần tử của một đối tượng nào đó , bất cứ khi nào sử dụng vòng lặp hay kỹ thuật nào đó để có được giá trị một nhóm phần tử thì đó là **iteration** .
 ## **2) Iterable object**
 - **Iterable object** là một **object** có phương thức `_iter_` trả về một **iterator** , hoặc là một **object** có phương thức `_getitem_` cho phép lấy bất cứ phần tử nào của nó bằng `indexing` ví dụ như **chuỗi** , **list** , **tuple** .
 ## **3) Iterator object**
