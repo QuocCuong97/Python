@@ -314,7 +314,68 @@
         >>> tbc(1, 2, 3)
         2.0
         ```
-- **VD2 :** 
+- **VD2 :** Sử dụng **default argument** :
+    ```py
+    >>> ham_mu = lambda x, a=2: x**a
+    >>> ham_mu(2)
+    4
+    >>> ham_mu(2, 3)
+    8
+    ```
+- Lý do nên sử dụng `lambda` : là một công cụ nhanh gọn để có thể tạo ra một hàm và sử dụng nó .
+### **Câu điều kiện cho `lambda`**
+- Cú pháp :
+    ```py
+    if a:
+        b
+    else:
+        c
+    ```
+    => `Lambda` ( cách `1` ) :
+    ```py
+    b if a else c              # nên dùng cách này
+    ```
+    => `Lambda` ( cách `2` ) :
+    ```py
+    (a and b) or c
+    ```
+- **VD1 :**
+    ```py
+    >>> tim_max = lambda x, y: x if x > y else y
+    >>> tim_max(1, 3)
+    3
+    ```
+- **VD2 :** lồng `if` 
+    ```py
+    >>> boi_chung_2_3 = lambda x: (1 if x % 3 == 0 else 0) if x % 2 == 0 else 0
+    >>> boi_chung_2_3(6)
+    1
+    >>> boi_chung_2_3(8)
+    0
+    ```
+### **`Lambda` chồng `lambda`** (`*`)
 ## **8) Một số công cụ hỗ trợ**
 ### **8.1) Hàm `map`**
+- Cú pháp :
+    ```py
+    map(func, iterable)
+    ```
+    Cụ thể hơn :
+    ```py
+    >>> def mymap(func, iterable)
+    ...     for x in iterable:
+    ...         yield func(x)
+    ...
+    ```
+- Công dụng : hàm `map` sẽ trả về một **map object** ( một dạng **generator** ) . Hàm `map` sẽ lấy từng phần tử của `iterable` sau đó dùng gọi hàm `func` với `argument` là giá trị mới lấy ra từ `iterable` , kết quả trả về của hàm `func` sẽ được `yield` .
+- **VD :**
+    ```py
+    >>> def inc(x): return x + 1
+    ...
+    >>> lst = [1, 2, 3, 4]
+    >>> lst_out = map(inc(lst))
+    [2, 3, 4, 5]
+    ```
+### **8.2) Hàm `filter`**
+### **8.3) Hàm `reduce`**
 ## **9) Đệ quy ( recursion )**
