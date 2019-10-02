@@ -377,5 +377,27 @@
     [2, 3, 4, 5]
     ```
 ### **8.2) Hàm `filter`**
-### **8.3) Hàm `reduce`**
-## **9) Đệ quy ( recursion )**
+- Cú pháp :
+    ```py
+    filter(function of None, iterable)
+    ```
+- Công dụng : hàm `filter` sẽ trả về một **filter object** ( một dạng **generator object** ) . Hàm `filter` lấy từng giá trị trong **iterable** , sau đó gửi vào hàm , nếu như giá trị hàm trả ra là một giá trị khi chuyển sang kiểu dữ liệu **boolean** là `True` thì sẽ `yield` giá trị đó , nếu không thì bỏ qua . Trường hợp không gửi hàm vào mà là `None` , hàm `filter` lấy từng giá trị trong **iterable** , nếu giá trị đó chuyển sang giá trị **boolean** là `True` thì `yield` , nếu không thì bỏ qua .
+- **VD :**
+    ```py
+    >>> func = lambda x: x > 0
+    >>>
+    >>> lst = [1. -3, 5, 0, 2, 6, -4, -9]
+    >>> lst_2(filter(func, lst))
+    [1, 5, 2, 6]
+    ```
+### **8.3) Hàm `reduce`**(`*`)
+- Trước hết , import hàm `reduce` từ thư viện `functools` :
+    ```py
+    from functools import reduce
+    ```
+- Cú pháp :
+    ```py
+    reduce(function, sequence[, initial])
+    ```
+- Công dụng : trả về một giá trị
+## **9) Đệ quy ( recursion )**(`*`)
