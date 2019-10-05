@@ -57,7 +57,7 @@
     ```
 - **B3 :** Giải nén file :
     ```
-    # tar -xzvf Python-3.7.4.tar.xz
+    # tar -xvf Python-3.7.4.tar.xz
     ```
 - **B4 :** Vào thư mục vừa giải nén , chạy script `configure` để thực hiện 1 vài bước kiểm tra các gói phần mềm phụ thuộc :
     ```

@@ -37,4 +37,22 @@
 - Để đổi tên bảng trong database , sử dụng lệnh `RENAME TABLE <old_name> TO <new_name>` .
 - **VD :** Đổi tên bảng `new_table` thành `NEW_TABLE` :
     ```py
-    
+    mycursor = mydb.cursor()
+
+    mycursor.execute('RENAME TABLE new_table TO NEW_TABLE')
+    ```
+    => Kết quả :
+
+    <img src=https://i.imgur.com/cWJszDR.png>
+
+### **Xóa bảng**
+- Để xóa bảng trong database , sử dụng lệnh `DROP TABLE <table_name>` .
+- **VD :** Xóa bảng `NEW_TABLE` :
+    ```py
+    mycursor = mydb.cursor()
+
+    mycursor.execute('DROP TABLE NEW_TABLE')
+    ```
+    => Kết quả :
+
+    <img src=https://i.imgur.com/zVj8Vwg.png>
