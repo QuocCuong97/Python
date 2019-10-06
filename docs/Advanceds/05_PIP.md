@@ -1,6 +1,6 @@
 # PIP
 ## **1) Khái niệm**
-- **PIP** là trình quản lý các **package** , **module** bất kỳ tùy ý .
+- **PIP** là trình quản lý , cài đặt các **package** , **module** bất kỳ tùy ý cho **Python** .
 - Từ phiên bản `3.4` trở đi , **PIP** đã được cài đặt sẵn trong **Python** .
 - Trang chủ : https://pypi.org/project/pip/
 - Các packages có thể cài qua `pip` : https://pypi.org/
