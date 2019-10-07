@@ -40,3 +40,19 @@ Successfully installed virtualenv-16.7.5
     ```
     $ virtualenv --no-site-packages [project_name]
     ```
+- Xóa **virtual environment** : tương ứng với việc xóa thư mục `project_name` :
+    ```
+    $ rm -rf project_name/
+## **4) Sử dụng `virtualenv`**
+- Đứng tại thư mục chứa folder `project_name` , sử dụng lệnh :
+    ```
+    $ source [project_name]/bin/activate
+    ```
+- Tên của **Virtual Environment** sẽ xuất hiện ở phía trước command prompt , cho thấy **Python** đang sử dụng **virtual environment**. Từ đây tất cả những **packages** được cài đặt mới sẽ nằm trong thư mục `project_name` .
+
+    <img src=https://i.imgur.com/HPYyqNq.png>
+
+- Thoát khỏi **virtual environment** , dùng lệnh :
+    ```
+    $ deactivate
+    ```
