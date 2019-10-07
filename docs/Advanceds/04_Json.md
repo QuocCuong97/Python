@@ -51,3 +51,80 @@
     | `True` | true |
     | `False` | false |
     | `None` | null |
+
+- **VD2 :** 
+    ```py
+    import json
+
+    x = {
+    "name": "John",                              
+    "age": 30,
+    "married": True,
+    "divorced": False,
+    "children": ("Ann","Billy"),
+    "pets": None,
+    "cars": [
+        {"model": "BMW 230", "mpg": 27.5},
+        {"model": "Ford Edge", "mpg": 24.1}
+    ]
+    }
+
+    print(json.dumps(x))
+    ```
+    => Output :
+    ```
+    {"name": "John", "age": 30, "married": true, "divorced": false, "children": ["Ann","Billy"], "pets": null, "cars": [{"model": "BMW 230", "mpg": 27.5}, {"model": "Ford Edge", "mpg": 24.1}]}
+    ```
+## **4) Chuẩn hóa định dạng file JSON**
+- File trên tuy trả về một chuỗi `JSON` , nhưng không phải ở định dạng dễ đọc , không có những phần thụt vào và xuống dòng .
+- Cú pháp phương thức `dumps()` :
+    ```py
+    json.dumps(var, indent=a, separators=(", ", ": "), sort_keys=True
+    ```
+    - Trong đó :
+        - `var` là **object Python** cần chuyển đổi thành `JSON`
+        - `indent=a` : giá trị tùy chọn. Thụt đầu dòng các **object** so với lề là `a` khoảng trắng . Thường đặt `indent=4`
+        - `separators=(", ", ": ")` : giá trị mặc định . Sử dụng một `dấu phẩy` + `khoảng trắng` để ngăn cách mỗi **object** , `dấu :` + `khoảng trắng` để ngăn cách các `key` trong các giá trị .
+        - `sort_keys=True` : giá trị tùy chọn . Sắp xếp các `key` theo thứ tự bảng chữ cái .
+- **VD :**
+    ```py
+    import json
+
+    x = {
+    "name": "John",
+    "age": 30,
+    "married": True,
+    "divorced": False,
+    "children": ("Ann","Billy"),
+    "pets": None,
+    "cars": [
+        {"model": "BMW 230", "mpg": 27.5},
+        {"model": "Ford Edge", "mpg": 24.1}
+    ]
+    }
+    print(json.dumps(x, indent=4, sort_keys=True))
+    ```
+    => Output :
+    ```json
+    {
+        "age": 30,
+        "cars": [
+            {
+                "model": "BMW 230",
+                "mpg": 27.5
+            },
+            {
+                "model": "Ford Edge",
+                "mpg": 24.1
+            }
+        ],
+        "children": [
+            "Ann",
+            "Billy"
+        ],
+        "divorced": false,
+        "married": true,
+        "name": "John",
+        "pets": null
+    }
+    ```
