@@ -46,7 +46,7 @@
     import subprocess
     print("The output of 'pwd' command is: ")
 
-    output = subprocess.call('pwd')
+    output = subprocess.getoutput('pwd')
     print(output)
     ```
     => Output :
