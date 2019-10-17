@@ -136,7 +136,7 @@
 
     <img src=https://i.imgur.com/497dNxU.png>
 
-### **3.2) Capture lại phần thông báo lỗi của Python**
+### **3.2) Capture lại phần thông báo lỗi của Python ( *traceback* )**
 - Có thể sử dụng tham số `exc_info` để lưu lại đoạn thông báo lỗi của Python .
 - **VD :**
     ```py
@@ -155,4 +155,5 @@
     <img src=https://i.imgur.com/dlamWYm.png>
 
 
-[Tìm hiểu thêm](https://realpython.com/python-logging/)
+[Tìm hiểu thêm_1](https://realpython.com/python-logging/)
+[Tìm hiểu thêm_2](https://techblog.vn/log-cho-python-su-dung-sao-cho-dung-va-de-nhan-biet)
