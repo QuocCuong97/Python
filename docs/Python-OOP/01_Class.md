@@ -20,3 +20,24 @@
     ```
 ## **2) Thuộc tính**
 - Khi khai báo thuộc tính cho một object , phải nghĩa ra những thuộc tính để mà giúp có thể phân biệt nó với những object khác cùng class .
+- **VD :**
+    ```py
+    class SinhVien:
+        pass
+
+    Sinh_Vien_A = SinhVien()
+    Sinh_Vien_A.ten = "Cuong"
+    Sinh_Vien_A.lop = "VT1"
+    Sinh_Vien_A.MSV = "B15VT049"
+    print("Tên Sinh Viên :", Sinh_Vien_A.ten)
+    print("Lớp :", Sinh_Vien_A.lop)
+    print("Mã SV :", Sinh_Vien_A.MSV)
+    ```
+    => Output :
+    ```
+    Tên Sinh Viên : Cuong
+    Lớp : VT1
+    Mã SV : B15VT049
+    ```
+## **3) Hàm constructor ( initialize method )**
+- 
