@@ -40,4 +40,4 @@
     Mã SV : B15VT049
     ```
 ## **3) Hàm constructor ( initialize method )**
-- 
+- new
