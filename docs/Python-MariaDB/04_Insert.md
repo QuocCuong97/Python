@@ -23,7 +23,7 @@
     ```
     => Show bảng :
 
-    <img src=https://i.imgur.com/Kp3J5se.png>
+    <img src=https://i.imgur.com/nJLez1f.png>
 
 >  Hàm `commit()` là bắt buộc để thực hiện thay đổi với bảng .
 
@@ -60,7 +60,7 @@
     ```
     => Show bảng :
 
-    <img src=https://i.imgur.com/5SNctZe.png>
+    <img src=https://i.imgur.com/C3NNEhN.png>
 
 ### **Lấy ID của dòng vừa thêm vào**
 - Có thể lấy ID của dòng vừa insert bằng phương thức `lastrowid` .
