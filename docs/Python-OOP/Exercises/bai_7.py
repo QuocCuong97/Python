@@ -1,11 +1,12 @@
 '''
-Viết chương trình quản lý thư viện thực hiện các nhiệm vụ sau :
-- Quản lý sách trong thư viện : cho phép thêm, xóa, sửa đổi thông tin về các sách trong cơ sở dữ liệu của chương trình
-- Quản lý người dùng : cho phép thêm , xóa, sửa đổi thông tin về các user trong cơ sở dữ liệu của chương trình
-- Phân cấp 2 mức người dùng của chương trình : người dùng bình thường (user) và người dùng cao cấp (admin).
-Người dùng bình thường không cần đăng nhập và chỉ có thể xem thông tin về sách trong thư viện .
-Người dùng cao cấp có thể sửa đổi thông tin thư viện (thêm, sửa và xóa)
-- Một quyển sách có các thông tin sau : mã số (isbn), tên sách (title), chủ đề (subject), tác giả (author), nhà xuất bản
-(publisher), ngày tháng xuất bản (date), số trang (pages), số bản copy trong thư viện (copies) . Việc tìm kiếm được thực
-hiện trên các thông tin chính là : tên sách , chủ đề , tác giả , nhà xuất bản và năm xuất bản
+Một đối tượng sách trong hệ thống quản lý thư viện có các thuộc tính:
+Tên sách, Tổng số quyển sách, Số quyển sách đang cho mượn
+- Xây dựng lớp CSach với các thuộc tính trên và các phương thức sau:
+    - Phương thức nhập liệu cho đối tượng từ bàn phím . 
+    Các thông tin cần nhập là: tên sách, tổng số sách, số đang cho mượn . 
+    - Phương thức in thông tin đối tượng ra màn hình . 
+    - Phương thức tính số sách còn lại trong thư viện (tổng số - số sách cho mượn) .
+- Trên cơ sở lớp đã xây dựng, viết chương trình chính thực hiện các công việc :
+Nhập danh sách các quyển sách với số lượng các quyển sách được nhập từ bàn phím .
+In ra màn hình các quyển sách hiện có trong thư viện (Số sách còn lại phải lớn hơn 0)
 '''

@@ -1,18 +1,34 @@
 '''
-Hãy định nghĩa class CauThu gồm các thuộc tính id, tên cầu thủ, năm sinh, vị trí
-(nhận một trong các giá trị: thủ môn, hậu vệ, tiền vệ, tiền đạo) và các phương thức
-khởi tạo, các getters/setters
+- Hãy định nghĩa class Person với các thuộc tính : họ tên, ngày sinh, địa chỉ, giới tính
+và các phương thức khởi tạo, hiển thị thông tin
+- Định nghĩa class NhanVien kế thừa từ Person, có thêm các thuộc tính: mã nhân viên,
+hệ số lương, đơn vị và các phương thức khởi tạo, hiển thị thông tin .
 '''
-class CauThu(object):
+class Person(object):
+    def __init__(self, para_hoten, para_ngaysinh, para_diachi, para_gioitinh):
+        self.hoten = para_hoten
+        self.ngaysinh = para_ngaysinh
+        self.diachi = para_diachi
+        self.gioitinh = para_gioitinh
+    
+    def show_info(self):
+        print('Họ Tên: {}'.format(self.hoten))
+        print('Ngày sinh: {}'.format(self.ngaysinh))
+        print('Địa chỉ: {}'.format(self.diachi))
+        print('Giới tính: {}'.format(self.gioitinh))
 
-    def __init__(self, para_id, para_ten, para_namsinh, para_vitri):
-        self.id = para_id
-        self.ten = para_ten
-        self.namsinh = para_namsinh
-        if para_vitri in ["thủ môn", "hậu vệ", "tiền vệ", "tiền đạo"]:
-            self.vitri = para_vitri
-        else:
-            print("Không tồn tại vị trí vừa nhập")
+class NhanVien(Person):
+    def __init__(self, para_hoten, para_ngaysinh, para_diachi, para_gioitinh, para_mnv, para_hsl, para_donvi):
+        super().__init__(para_hoten, para_ngaysinh, para_diachi, para_gioitinh)
+        self.mnv = para_mnv
+        self.hsl = para_hsl
+        self.donvi = para_donvi
 
+    def show_info(self):
+        return super().show_info()
+        print('Mã Nhân Viên: {}'.format(self.mnv))
+        print('Hệ số lương: {}'.format(self.hsl))
+        print('Đơn vị: {}'.format(self.donvi))
 
-cau_thu_A = CauThu("19", "Quang Hai", "1997", "tiền đạo")
+person_A = Person()
+nhan_vien_A = NhanVien()

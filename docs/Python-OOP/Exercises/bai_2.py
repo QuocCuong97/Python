@@ -1,19 +1,18 @@
 '''
-Định nghĩa class LopHoc với các thuộc tính danh sách sinh viên, sĩ số lớp, tên lớp
-và phương thức khởi tạo
+Hãy định nghĩa class CauThu gồm các thuộc tính id, tên cầu thủ, năm sinh, vị trí
+(nhận một trong các giá trị: thủ môn, hậu vệ, tiền vệ, tiền đạo) và các phương thức
+khởi tạo, các getters/setters
 '''
-class LopHoc(object):
-    def __init__(self, para_dssv, para_si_so, para_ten_lop):
-        self.dssv = para_dssv
-        self.si_so = para_si_so
-        self.ten_lop = para_ten_lop
-    
-class SinhVien(object):
+class CauThu(object):
 
-    def __init__(self, para_hoten):
-        self.hoten = para_hoten
-
-sinh_vien_A = SinhVien('Ngo Quoc Cuong')
-sinh_vien_B = SinhVien('Dinh Cong Hung')
+    def __init__(self, para_id, para_ten, para_namsinh, para_vitri):
+        self.id = para_id
+        self.ten = para_ten
+        self.namsinh = para_namsinh
+        if para_vitri in ["thủ môn", "hậu vệ", "tiền vệ", "tiền đạo"]:
+            self.vitri = para_vitri
+        else:
+            print("Không tồn tại vị trí vừa nhập")
 
 
+cau_thu_A = CauThu("19", "Quang Hai", "1997", "tiền đạo")

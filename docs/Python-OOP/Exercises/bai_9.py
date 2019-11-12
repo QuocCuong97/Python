@@ -1,27 +1,8 @@
 '''
-Xây dựng các lớp theo sơ đồ sau :
-
-                            Hình vẽ
-                               |
-            ___________________|___________________
-            |                                     |
-        Hai chiều                              Ba chiều
-            |                                     |
-     _______|________                     ________|________
-     |      |       |                     |               |
-   Tròn   Vuông   Tam giác               Cầu          Lập phương
-
-Tạo phương thức cho các lớp trên và cho phép in ra được thông tin của các hình
-như chu vi , diện tích, thể tích...
+Xây dựng chương trình để thông báo các thành viên được khen thưởng trong 1 năm học của trường đại học:
+Tiêu chuẩn xét khen thưởng:
+- Sinh viên : Điểm trung bình tích lũy phải lớn hơn 8
+- Giảng viên : Có ít nhất 2 công trình nghiên cứu
+- Người quản lý : Hoàn thành tốt công việc được giao
+Xuất danh sách các người được khen thưởng gồm họ tên và bộ phận trực thuộc .
 '''
-
-class HinhVe(object):
-    
-    def __init__(self, para_ten):
-        self.ten_hinh = para_ten
-        
-class HaiChieu(HinhVe):
-    def __init__(self, para_ten):
-        super().__init__(para_ten)
-    def tinh_chu_vi(self, para_)
-class BaChieu(object):
