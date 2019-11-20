@@ -6,7 +6,7 @@
 - Các packages có thể cài qua `pip` : https://pypi.org/
 ## **2) Cài đặt PIP**
 ### **2.1) Cài đặt trên Ubuntu**
-#### **2.1.1) Cài đặt từ `yum` ( phiên bản thấp )**
+#### **2.1.1) Cài đặt từ `apt` ( phiên bản thấp )**
 - **B1 :** Update các gói phần mềm hệ thống :
     ```
     $ sudo apt-get update
