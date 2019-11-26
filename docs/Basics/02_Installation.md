@@ -51,17 +51,17 @@
     ```
     # yum groupinstall -y "Development Tools"
     ```
-- **B2 :** Download phiên bản mới nhất của **Python** ( `3.7.4` ) từ trang chủ :
+- **B2 :** Download phiên bản mới nhất của **Python** ( `3.8.0` ) từ trang chủ :
     ```
-    # wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tar.xz
+    # wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tar.xz
     ```
 - **B3 :** Giải nén file :
     ```
-    # tar -xvf Python-3.7.4.tar.xz
+    # tar -xvf Python-3.8.0.tar.xz
     ```
 - **B4 :** Vào thư mục vừa giải nén , chạy script `configure` để thực hiện 1 vài bước kiểm tra các gói phần mềm phụ thuộc :
     ```
-    # cd Python-3.7.4
+    # cd Python-3.8.0
     # ./configure --enable-optimizations
     ```
 - **B5 :** Biên dịch file cài đặt :
@@ -71,7 +71,7 @@
     ```
 - **B6 :** Sau khi cài đặt thành công , kiểm tra phiên bản **Python** vừa cài đặt :
     ```
-    # python3.7 -V
+    # python3.8 -V
     ```
 ## **3) Cài đặt trên Ubuntu/Debian**
 - Mặc định , khi cài đặt qua `apt-get` , chỉ có phiên bản `2.7.5` được cài đặt :
