@@ -1,7 +1,7 @@
 # Tổng quan về Django
 ## **1) Giới thiệu** <img src=https://i.imgur.com/knrEw3J.png align=right width=47% >
 - **Django** là một framework bậc cao của **Python** có thể thúc đẩy việc phát triển phần mềm thần tốc và clean , thiết kế thực dụng . Được xây dựng bởi nhiều lập trình viên kinh nghiệm , **Django** tập trung lớn những vấn đề phát triển Web , bạn có thể phát triển trang web của bạn mà không cần xây dựng từ những căn bản . Đặc biệt nó ***free*** và ***open source*** . 
-- Phiên bản ổn định hiện tại : `2.2.6`
+- Phiên bản ổn định hiện tại : `3.0.1`
 - Trang chủ : https://www.djangoproject.com/
 - Github : https://github.com/django/django
 - Những lợi thế của **django**:
