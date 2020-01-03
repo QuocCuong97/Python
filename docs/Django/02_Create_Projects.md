@@ -35,7 +35,7 @@
 - File `manage.py` giúp tương tác với Project qua các command ( như tạo tài khoản admin, tạo database , chạy server ảo,....) => không nên chỉnh sửa .
 - Ở folder `PythonWeb` gồm 4 file :
     - `__init__.py` : đây là 1 file cơ bản trong **Python** dùng để biến folder chứa nó thành 1 package ,giúp ta có thể import .
-    - `settin**gs.py` : đây là file cấu hình project ( cấu hình database, đặt múi giờ, cài thêm thư viện,....)
+    - `settings.py` : đây là file cấu hình project ( cấu hình database, đặt múi giờ, cài thêm thư viện,....)
     - `urls.py` : đây là file giúp tạo các đường dẫn urls của trang web để liên kết các webpage lại với nhau .
     - `wsgi.py` : đây là file giúp ta deploy project lên server .
 ## **3) Chạy web trên localhost**
