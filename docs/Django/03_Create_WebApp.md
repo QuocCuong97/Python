@@ -38,3 +38,33 @@
 
             4 directories, 17 files
             ```
+- **B2 :** Khai báo cho Project biết ta vừa tạo 1 **App** mới ( mục đích chính là nếu sau này **app** có liên quan trong việc thiết kế các bảng trong **database** ) . Trong folder `PythonWeb` , mở file `settings.py` . Ở phần `INSTALLED_APPS` , thêm tên **app** vừa tạo :
+    
+    <img src=https://i.imgur.com/IY5mJKE.png>
+
+- **B3 :** Cập nhật file `settings.py` :
+    ```
+    python3 manage.py migrate
+    ```
+    <img src=https://i.imgur.com/OUraLBC.png>
+
+    > Nếu ta chạy `migrate` project lần đầu thì project **Django** sẽ tạo một số bảng cho chức năng user, admin cho database hiện tại. Bản chất **Django** hỗ trợ cho chúng ta hệ thống user, admin để thuận tiện cho việc phát triển trang web nhanh hơn.
+## **2) Cách thức hoạt động của web Django**
+### **2.1) Cách thức hoạt động của web**
+<img src=https://i.imgur.com/FYQ1TrE.jpg>
+
+- Phía Client chính là máy tính của người dùng, khi người dùng gửi 1 request bằng giao thức HTTP cho phía Server. Sau khi Server nhận được request, server sẽ phân tích xem người dùng yêu cầu thứ gì rồi sẽ response về cho máy người dùng.
+### **2.2) Cách thức hoạt động của Django**
+- Trước tiên , cần viết ra các hàm để xử lý những request của client gửi đến cho web server của mình .
+- **B1 :** Viết một hàm xử lý file `views.py` trong app `home` :
+    ```py
+    from django.shortcuts import render
+    from django.http import HttpResponse
+    # Create your views here.
+    def index(request):
+        response = HttpResponse()
+        response.writelines('<h1>Xin chào</h1>')
+        response.write('Đây là app home')
+        return response
+    ```
+- **B2 :** 
