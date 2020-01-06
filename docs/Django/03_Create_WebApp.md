@@ -77,8 +77,75 @@
         path('', views.index)
     ]
     ```
+    > Đây là cách import thêm class path để định nghĩa các urls và views từ app `home` . Ở đây ta tạo biến `urlpatterns` là một list chứa các path tồn tại trong app `home` . Ta tạo path có đường dẫn trắng và tương ứng gắn hàm `index` từ module `views.py`
+- **B3 :** Quay lại folder `PythonWeb`, chỉnh sửa file `urls.py` như sau :
+    ```py
+    from django.contrib import admin
+    from django.urls import path, include
 
+    urlpatterns = [
+      path('admin/', admin.site.urls),
+      path('home', include('home.urls')),
+    ]
+    ```
+    > Đầu tiên thêm hàm `include` từ thư viện `urls` . Trong list `urlpatterns`, thêm một path có 2 tham số truyền vào : đầu tiên là path của `home`, thứ hai là hàm `include()` chứa tham số là `home.urls` - file `urls.py` trong app `home` .
+- **B4 :** Chạy server : `python3 manage.py runserver`
+    - Hiện tại web server chỉ có 2 đường dẫn là `/admin` (có sẵn) và `/home` (vừa tạo) . Nếu chỉ vào `localhost:8000` thì sẽ trả về lỗi `404` :
 
+        <img src=https://i.imgur.com/c48xHVy.png>
 
+    - Truy cập địa chỉ : `localhost:8000/admin` :
 
-Tiếp theo ta sẽ phải xây dựng bộ urls để ứng với mỗi url trên trang web thì sẽ gọi hàm gì xử lý request đó. Ở app home, ta tạo thêm 1 file urls.py có nội dung như sau:
+        <img src=https://i.imgur.com/ZAELYjS.png>
+    
+    - Truy cập địa chỉ : `localhost:8000/home` :
+
+        <img src=https://i.imgur.com/yQtHLOG.png>
+
+    > Nếu muốn khi truy cập `localhost:8000` sẽ vào thẳng file `views.py` , chỉ cần xóa trắng path của app `home` :
+    ```py
+    from django.contrib import admin
+    from django.urls import path, include
+
+    urlpatterns = [
+      path('admin/', admin.site.urls),
+      path('', include('home.urls')),
+    ]
+    ```
+
+> ### Tổng kết nguyên lý hoạt động của **Django** :
+
+<img src=https://i.imgur.com/Xj2Yh8F.png>
+
+## **3) Viết test case đơn giản**
+- Trong lập trình , luôn luôn cần kiểm thử phần mềm ( **tester** ) .
+- Ta có thể viết một vài test case đơn giản để đưa cho đội ngũ **tester** .
+- Thêm các test case vào file `tests.py` trong app :
+    ```py
+    from django.test import TestCase, SimpleTestCase
+
+    # Create your tests here.
+    class SimpleTest(SimpleTestCase):
+        def test_home_page_status(self):
+            response = self.client.get('/')
+            self.assertEquals(response.status_code, 200)
+    ```
+    > Trong trường hợp này, ta import class `SimpleTestCase` là class con của `TestCase`, sau đó khai báo mới một class `SimpleTest` kế thừa `SimpleTestCase` . Trong class `TestCase` thì các method test mặc định phải đặt tên theo cú pháp "`test_[name]`"
+- Thử tắt server ( `Ctrl + C` ) và chạy test :
+    ```
+    $ python3 manage.py test
+    ```
+    ```
+    System check identified no issues (0 silenced).
+    .
+    ----------------------------------------------------------------------
+    Ran 1 test in 0.002s
+
+    OK
+    ```
+    => Không có lỗi
+    > Nếu có nhiều app và muốn test riêng từng app thì sử dụng lệnh :
+        
+    ```
+    $ python3 manage.py test [app_name]
+    ```
