@@ -87,5 +87,45 @@
       </div>
     </footer>
     ```
-    
+    - Hiển thị trên trình duyệt :
 
+        <img src=https://i.imgur.com/NDl76Fk.png>
+    - Để hiển thị **footer** ở dưới cùng , chỉnh sửa thêm 1 chút ở **CSS** :
+        ```html
+        <style>
+        footer {
+          position: absolute;
+          bottom: 0;
+        }
+        </style>
+        ```
+    - Sau khi thêm **CSS** :
+
+        <img src=https://i.imgur.com/BPfuq8v.png>
+- **B7 :** Tạo các webpage :
+    - Thêm webpage khi click vào `Liên hệ` . Thêm file `contact.html` vào cùng thư mục với `base.html` :
+        ```html
+        {% extends "pages/base.html" %}
+
+        {% block title %}Contact{% endblock %}
+
+        {% block content %}
+        <p>Liên hệ email:</p>
+        <p>cuongnq24101997@gmail.com</p>
+        {% endblock %}
+        ```
+    - Ở file `views.py` của app `blog`, thêm hàm truy vấn `/contact` :
+        ```py
+        def contact(request):
+            return render(request, 'pages/contact.html')
+        ```
+    - Ở file `urls.py` của app `blog`, tạo đường dẫn đến hàm `contact` :
+        ```py
+        urlpatterns = [
+            path('', views.index),
+            path('contact/', views.contact),
+        ]
+        ```
+    - Runserver :
+
+        <img src=https://i.imgur.com/FKn94dv.png>
