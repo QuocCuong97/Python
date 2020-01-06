@@ -67,4 +67,18 @@
         response.write('Đây là app home')
         return response
     ```
-- **B2 :** 
+    > Trong trường hợp này , đầu tiên sẽ import `HttpResponse` từ thư viện, sau đó sẽ viết 1 hàm `index` có tham số `request` - chính là request của người dùng trả về . Trong hàm này, tạo một instance `HttpResponse()` , sử dụng phương thức `writelines()` hay `write()` để viết nội dung html nằm trong response này . Cuối cùng sẽ return response để trả về máy người dùng .
+- **B2 :** Xây dựng bộ `urls` để ứng với mỗi `url` trên trang web thì sẽ gọi hàm gì xử lý request đó . Ở app `home`, tạo thêm 1 file `urls.py` có nội dung sau :
+    ```py
+    from django.urls import path
+    from . import views
+
+    urlpatterns = [
+        path('', views.index)
+    ]
+    ```
+
+
+
+
+Tiếp theo ta sẽ phải xây dựng bộ urls để ứng với mỗi url trên trang web thì sẽ gọi hàm gì xử lý request đó. Ở app home, ta tạo thêm 1 file urls.py có nội dung như sau:
