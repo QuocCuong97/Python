@@ -49,7 +49,7 @@
     templates/
     └── pages
         ├── base.html
-        └── home.html
+        └── home.html      # New File
 
     1 directory, 2 files
     ```
@@ -75,4 +75,11 @@
     def index(request):
         return render(request, 'pages/home.html')
     ```
+    > Gọi **template** bằng hàm `render()` . Hàm này có 2 tham số truyền vào : đầu tiên là `request` là request từ máy client , thứ 2 là tên đường dẫn tới **template** muốn dùng . (chỉ cần gọi đường dẫn bên trong folder `templates`)
+- **B6 :** Start Server và kiểm tra :
     
+    <img src=https://i.imgur.com/dEIIxDz.png>
+
+>### Nguyên lý hoạt động của **Template Jinja**
+
+<img src=https://i.imgur.com/xnDc2sr.png>
