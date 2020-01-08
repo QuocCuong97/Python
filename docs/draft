@@ -1,0 +1,69 @@
+import json
+import re
+import requests
+import urllib.request
+from bs4 import BeautifulSoup
+from json_execute import load_from_json, export_to_json
+
+class MatBao(object):
+    def __init__(self):
+        self.url = "https://www.matbao.net/"
+        self.source = "MatBao"
+    
+    def get_dom(self):
+        page = urllib.request.urlopen(self.url)
+        dom = BeautifulSoup(page, 'html5lib')
+        return dom
+    
+    def get_vn(self):
+        html_dom = self.get_dom()
+        mark = html_dom.find(attrs={'title' : 'Tên miền .vn'})
+        self.price = mark.b.contents[0].strip().split('đ')
+        print(self.price[0])
+
+class NhanHoa(MatBao):
+    def __init__(self):
+        self.url = "https://nhanhoa.com/"
+        self.source = "NhanHoa" 
+
+    def get_vn(self):
+        html_dom = self.get_dom()
+        mark = html_dom.find(attrs={'src' : "templates/images/domain/d1.jpg"})
+        mark_parent = mark.parent
+        mark_parent_sibling = mark_parent.nextSibling.nextSibling
+        self.price = mark_parent_sibling.ul.li.string
+        print(self.price)
+
+
+# class PAVietNam(MatBao):
+#     def __init__(self):
+#         self.url = "https://www.pavietnam.vn/en/ten-mien-bang-gia.html"
+#         self.source = "P.A VietNam"
+#     def get_vn(self):
+#         html_dom = self.get_dom()
+#         mark = html_dom.find(attrs={'lang' : "abcdefg_vn"})
+#         self.price = mark.contents[0].strip()
+#         print(self.price)
+
+
+class INet(MatBao):
+    def __init__(self):
+        self.url = "https://inet.vn/api/domain/listsuffix"
+        self.source = "iNET"
+
+    def get_vn(self):
+        html_dom = self.get_dom()
+        json_file = html_dom.html.body.string
+		val = load_from_json(json_file)
+        # val = load_from_json()
+        # self.sale = 
+        # mark = html_dom.findAll(class_="suf-name", text=".vn")
+        # mark = mark[1].parent.nextSibling.nextSibling
+        # mark_parent_sibling = mark_parent.nextSibling
+        # for x in mark:
+        #     print(x)
+        print(json_file)
+
+ 
+a = INet()
+a.get_vn()
