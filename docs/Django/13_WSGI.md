@@ -3,44 +3,44 @@
 ## **2) Các bước thực hiện**
 - **B1 :** Update các package sẵn có :
     ```
-    # yum update -y
-    # yum upgrade -y
+    yum update -y
+    yum upgrade -y
     ```
 - **B2 :** Cài đặt **Python `3.6`** và các package hỗ trợ :
     ```
-    # yum install -y https://centos7.iuscommunity.org/ius-release.rpm
-    # yum repolist
-    # yum install -y python36u python36u-libs python36u-devel python36u-mod_wsgi
+    yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+    yum repolist
+    yum install -y python36u python36u-libs python36u-devel python36u-mod_wsgi
     ```
 - **B3 :** Cài đặt **PIP** phiên bản mới nhất :
     ```
-    # curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-    # python3 get-pip.py
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    python3 get-pip.py
     ```
 - **B4 :** Cài đặt package `git`, `httpd` :
     ```
-    # yum install -y git httpd
+    yum install -y git httpd
     ```
 - **B5 :** Cấu hình **firewalld** cho phép dịch vụ `httpd` ( trong trường hợp có sử dụng **firewalld** ) :
     ```
-    # firewall-cmd --zone=public --permanent --add-service=http
-    # firewall-cmd --reload
+    firewall-cmd --zone=public --permanent --add-service=http
+    firewall-cmd --reload
     ```
 - **B6 :** Khởi động `httpd` và cho phép khởi động cùng hệ thống :
     ```
-    # systemctl start httpd
-    # systemctl enable httpd
+    systemctl start httpd
+    systemctl enable httpd
     ```
 - **B7 :** Truy cập vào đường dẫn `/var/www` và clone source code vào thư mục `project` :
     ```
-    # cd /var/www
-    # git clone https://github.com/QuocCuong97/Pricelist project
+    cd /var/www
+    git clone https://github.com/QuocCuong97/Pricelist project
     ```
 - **B8 :** Vào thư mục source code vừa tạo và tạo `virtualenv` :
     ```
-    # cd project
-    # pip install virtualenv==16.7.4
-    # virtualenv env_crawl
+    cd project
+    pip install virtualenv==16.7.4
+    virtualenv env_crawl
     ```
     ```
     /var/www/
@@ -56,7 +56,7 @@
     ```
 - **B9 :** Đổi môi trường sang virtualenv vừa tạo :
     ```
-    # source env_crawl/bin/activate
+    source env_crawl/bin/activate
     (env_crawl) #
     ```
 - **B10 :** Cài đặt các gói và thư viện cần thiết trong file `requirements.txt` :
@@ -71,7 +71,7 @@
 
 - **B12 :** Tạo mới file `crawl_pricelist.conf` trong thư mục `/etc/httpd/conf.d/` với nội dung sau (chú ý các đường dẫn) :
     ```
-    # vi /etc/httpd/conf.d/crawl_pricelist.conf
+    vi /etc/httpd/conf.d/crawl_pricelist.conf
     ```
     ```
     <VirtualHost *:80>
@@ -94,7 +94,7 @@
     WSGIPassAuthorization On
     </VirtualHost>
     ```
-- **B13 :** Chỉnh sửa file `wsgi.py` :
+- **B13 :** Chỉnh sửa file `wsgi.py` của thư mục `Pricelist` :
     ```py
     """
     WSGI config for Pricelist project.
@@ -129,7 +129,7 @@
     ```
 - **B14 :** Khởi động lại dịch vụ `httpd` :
     ```
-    # systemctl restart httpd
+    systemctl restart httpd
     ```
     => Kết quả hiển thị trên trình duyệt :
 
