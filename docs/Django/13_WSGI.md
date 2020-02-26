@@ -75,6 +75,7 @@
     ```
     ```
     <VirtualHost *:80>
+    ServerName testings123.space
     Alias /static  /var/www/project/static
         <Directory  /var/www/project/static>
             AllowOverride All
