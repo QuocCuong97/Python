@@ -1,2 +1,2 @@
 # Python
-Kiến thức về ngôn ngữ Python
+Ghi chép về ngôn ngữ Python
