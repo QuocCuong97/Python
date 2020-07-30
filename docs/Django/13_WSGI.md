@@ -8,7 +8,10 @@
     ```
 - **B2 :** Cài đặt **Python `3.6`** và các package hỗ trợ :
     ```
-    yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+    yum install epel-release -y
+    curl 'https://setup.ius.io/' -o setup-ius.sh
+    sh setup-ius.sh
+    yum install https://repo.ius.io/ius-release-el7.rpm https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     yum repolist
     yum install -y python36u python36u-libs python36u-devel python36u-mod_wsgi
     ```
