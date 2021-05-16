@@ -8,3 +8,12 @@
 - Giao diện chính của **Qt Designer** :
 
     <img src=https://i.imgur.com/RKmbx1j.png>
+
+- Convert file `.ui` thành file `.py` :
+    ```
+    pyuic5 -x demo.ui -o demo.py
+    ```
+- Convert file `.src` thành file `.py` :
+    ```
+    pyrcc5 .\test.qrc -o test_rc.py
+    ```

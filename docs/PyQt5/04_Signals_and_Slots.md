@@ -1,0 +1,3 @@
+# Signals & Slots
+- Không giống console mode application, được thực thi theo luồng tuần tự, GUI application được điều khiển bởi các events. Các function hoặc method được thực thi để phản hồi lại các hành động của người dùng như click button, select item hoặc click chuột,... gọi là **events**.
+- Các widget được sử dụng để xây dựng giao diện GUI đóng vai trò là nguồn của các **event** đó. Mỗi **PyQt widget**, bắt nguồn từ class `QObject`, được thiết kế để phát ra **signal** phản hồi lại 1 hoặc nhiều **event**. **Signal** không tự thực hiện bất cứ **event** nào. Thay vào đó, nó kết nối tới một **slot**. **Slot** có thể là bất cứ hàm **Python** nào gọi được.
