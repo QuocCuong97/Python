@@ -112,3 +112,10 @@
 ### **Dist folder**
 - Thư mục `dist/` chứa phần mềm đích cuối cùng. Bên trong thư mục `dist/` sẽ chứa 1 thư mục được đặt tên theo ***entry-point script*** chứa tất cả cá thành phần phục thuộc và có thể thực thi cho ứng dụng (`app.exe`)
 - Có thể thấy nhiều file `.so`, `.pyd`, `.dll` tùy thuộc vào hệ điều hành. Đây là các thư viện được chia sẻ đại diện cho các dependency của project mà **PyInstaller** đã tạo và thu thập.
+- Sử dụng lệnh :
+    ```
+    pyinstaller app.spec
+    ```
+## **Các công cụ cần sử dụng thêm**
+- **PyCompile** (trong thư viện **CPython**) sử dụng để compile code `.py` thành `.pyc`
+- **Inno Setup Compiler** : sử dụng để compress thư mục `dist` thành only one file `.exe`
